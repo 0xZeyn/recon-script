@@ -15,10 +15,12 @@ echo "waybackurls terminé"
 katana -silent -u $site > katana.txt
 echo "katana terminé"
 
+
+
 gau $site > gau.txt
 echo "gau terminé"
 
-cat waybackurls.txt katana.txt gau.txt | uro | sort -u > ./$domain-crawl.txt
+cat waybackurls.txt katana.txt gau.txt | httpx | sort -u > ./$domain-crawl.txt
 rm waybackurls.txt katana.txt gau.txt
 
 echo "La liste des endpoints crawlé a été enregistrée dans le fichier $domain-crawl.txt"
